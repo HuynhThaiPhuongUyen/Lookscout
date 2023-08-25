@@ -1,0 +1,58 @@
+.gird {
+    display: block;
+    width: 100%;
+  }
+  .gird.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 10px 0px; */
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: -16px;
+    /* thuộc tính âm chỉ dùng đc ở margin, dùng âm để thụt dô trong */
+  }
+  .col {
+    padding: 16px;
+  }
+  .col-12 {
+    flex: 0 0 100%;
+  }
+  /* 12-->100% nên 11--> 11:12.100=91.6667 */
+  .col-11 {
+    flex: 0 0 91.6667%;
+  }
+  .col-10 {
+    flex: 0 0 83.3333%;
+  }
+  .col-9 {
+    flex: 0 0 75%;
+  }
+  .col-8 {
+    flex: 0 0 66.6667%;
+  }
+  .col-7 {
+    flex: 0 0 58.3333%;
+  }
+  .col-6 {
+    flex: 0 0 50%;
+  }
+  .col-5 {
+    flex: 0 0 41.6667%;
+  }
+  .col-4 {
+    flex: 0 0 33.3333%;
+  }
+  .col-3 {
+    flex: 0 0 25%;
+  }
+  .col-2 {
+    flex: 0 0 16.6667%;
+  }
+  .col-1 {
+    flex: 0 0 8.3333%;
+  }
+  

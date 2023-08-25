@@ -1,0 +1,306 @@
+* {
+    font-family: "Inter", sans-serif;
+  }
+  html {
+    font-size: 62.5%;
+    /* mặc định html là 16px là 100%, chuyển về 10px là 62.5%, 20px là 2rem */
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  :root {
+    --text-color: #272d37;
+    --bg-color: #437ef7;
+    --border-color: #dae0e6;
+    /* tạo bảng màu ở đây cho dễ code hơn */
+  }
+  a {
+    color: var(--text-color);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .header-left ul {
+    display: flex;
+    gap: 32px;
+  }
+  .button-white,
+  .button-blue {
+    /* nhóm những cái dùng chung giống nhau */
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    /* cursor pointer là hiển thị bàn tay chạm vào cho có sự tương tác */
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .header-left-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  .button-white {
+    background-color: white;
+    margin-right: 10px;
+    /* làm cho nó cách ra 1 khoảng ko bị dính vào nhau */
+    color: var(--bg-color);
+  }
+  .button-blue {
+    color: white;
+    background-color: var(--bg-color);
+    margin-right: 10px;
+  }
+  .button-bars {
+    display: none;
+  }
+  .banner h2 {
+    text-align: center;
+    font-size: 5.2rem;
+  }
+  .banner p {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin: 18px 0px 20px;
+  }
+  .baner-button {
+    display: flex;
+    justify-content: center;
+  }
+  .divide-top {
+    padding-top: 60px;
+    border-top: 2px solid #eaebf0;
+  }
+  .channel {
+    margin: 64px 0px;
+  }
+  .heading {
+    font-size: 3.2rem;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .description {
+    font-size: 1.6rem;
+    margin-bottom: 64px;
+    text-align: center;
+    line-height: 2rem;
+  }
+  .channel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .channel-category {
+    border: 1px solid var(--border-color);
+    padding: 20px 26px;
+  }
+  .channel-icon {
+    padding: 12px;
+  }
+  .channel .button-white {
+    color: black;
+    border: 1px solid var(--border-color);
+  }
+  .channel-bottom h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding: 24px 0px 8px;
+  }
+  .channel-bottom p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    height: 72px;
+  }
+  .button-channel {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+  }
+  .blog-container {
+    position: relative;
+  }
+  .blog-container img {
+    max-width: 100%;
+    object-fit: cover;
+    /* object-fit chỉ sử dụng cho thẻ img */
+  }
+  .blog-container::after {
+    /* ":before" giống ":after" */
+    content: "";
+    /* dùng :after/:before thì phải có content: "(ghi hoặc ko ghi cũng đc)" */
+    position: absolute;
+    background-image: url(../img/Avatarlasted2.png);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    
+    bottom: -25px;
+    right: 20px;
+  }
+  .blog-container:first-child::after{
+    background-image: url(../img/Avatarlasted1.png);
+  }
+  .blog-container:last-child::after{
+    background-image: url(../img/Avatarlasted3.png);
+  }
+  .blog-iteams{
+    display: grid;
+    /* display: grid đều dùng giống flex */
+    /* grid-template-columns: auto auto auto; */
+    /* cách ghi 1, chia làm 3 cột */
+    grid-template-columns: repeat(3,auto);
+    /* cách ghi 2, 3 cột và khoảng cách tự chia, or có thể chia theo px, auto=1fr */
+    gap: 30px;
+  }
+  /* RESPONSIVE */
+  /* Large screens and desktop */
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container {
+      max-width: 900px;
+    }
+  }
+  /* Laptop and small screen */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      max-width: 900px;
+      padding: 0 10px;
+    }
+    .button-blue {
+      margin-right: 10px;
+    }
+    .header-left ul {
+      gap: 24px;
+    }
+    .banner h2 {
+      font-size: 3rem;
+    }
+    .banner p {
+      font-size: 1.5rem;
+    }
+  }
+  /* iPad and tablets */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+      max-width: 900px;
+    }
+    .button-bars {
+      display: inline-block;
+    }
+    .header-left ul {
+      display: none;
+    }
+    .banner h2 {
+      font-size: 1.5rem;
+    }
+    .banner p {
+      font-size: 0.8rem;
+    }
+    .col-tab-12 {
+      flex: 0 0 100%;
+    }
+    .col-tab-11 {
+      flex: 0 0 91.6667%;
+    }
+    .col-tab-10 {
+      flex: 0 0 83.3333%;
+    }
+    .col-tab-9 {
+      flex: 0 0 75%;
+    }
+    .col-tab-8 {
+      flex: 0 0 66.6667%;
+    }
+    .col-tab-7 {
+      flex: 0 0 58.3333%;
+    }
+    .col-tab-6 {
+      flex: 0 0 50%;
+    }
+    .col-tab-5 {
+      flex: 0 0 41.6667%;
+    }
+    .col-tab-4 {
+      flex: 0 0 33.3333%;
+    }
+    .col-tab-3 {
+      flex: 0 0 25%;
+    }
+    .col-tab-2 {
+      flex: 0 0 16.6667%;
+    }
+    .col-tab-1 {
+      flex: 0 0 8.3333%;
+    }
+  }
+  /* For mobile devices */
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+      max-width: 900px;
+    }
+    .button-bars {
+      display: inline-block;
+    }
+    .header-left ul {
+      display: none;
+    }
+    .banner h2 {
+      font-size: 1.5rem;
+    }
+    .banner p {
+      font-size: 0.7rem;
+    }
+    .baner-button {
+      font-size: 1rem;
+    }
+    .col-mobile-12 {
+      flex: 0 0 100%;
+    }
+    /* 12-->100% nên 11--> 11:12.100=91.6667 */
+    .col-mobile-11 {
+      flex: 0 0 91.6667%;
+    }
+    .col-mobile-10 {
+      flex: 0 0 83.3333%;
+    }
+    .col-mobile-9 {
+      flex: 0 0 75%;
+    }
+    .col-mobile-8 {
+      flex: 0 0 66.6667%;
+    }
+    .col-mobile-7 {
+      flex: 0 0 58.3333%;
+    }
+    .col-mobile-6 {
+      flex: 0 0 50%;
+    }
+    .col-mobile-5 {
+      flex: 0 0 41.6667%;
+    }
+    .col-mobile-4 {
+      flex: 0 0 33.3333%;
+    }
+    .col-mobile-3 {
+      flex: 0 0 25%;
+    }
+    .col-mobile-2 {
+      flex: 0 0 16.6667%;
+    }
+    .col-mobile-1 {
+      flex: 0 0 8.3333%;
+    }
+  }
+  
