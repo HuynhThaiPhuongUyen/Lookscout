@@ -151,7 +151,7 @@ a {
   bottom: -25px;
   right: 20px;
 }
-.blog-container:first-child::after {
+.blog-container:nth-child(1)::after {
   /* đặt :first-child (pseudo-class) đằng trc ::after (pseudo-element) như trên */
   background-image: url(../img/Avatarlasted1.png);
 }
